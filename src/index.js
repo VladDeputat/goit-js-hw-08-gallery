@@ -1,5 +1,5 @@
-import images from './js/gallery-items';
 import './css/styles.css';
+import images from './js/gallery-items';
 
 const galleryRef = document.querySelector('.js-gallery');
 
@@ -52,9 +52,9 @@ document.addEventListener('keydown', e => {
   if (e.keyCode === 27) closeModal();
 });
 
-document.addEventListener('keydown', e => {
-  console.log(e.keyCode);
-});
+// document.addEventListener('keydown', e => {
+//   console.log(e.keyCode);
+// });
 //console.log();
 // left 37
 // right 39
