@@ -1,5 +1,5 @@
-import './css/styles.css';
 import images from './js/gallery-items';
+import './css/styles.css';
 
 const galleryRef = document.querySelector('.js-gallery');
 
@@ -36,25 +36,21 @@ function openModal(e) {
   modalRef.classList.add('is-open');
   modalImgRef.src = e.target.dataset.source;
   modalImgRef.alt = e.target.alt;
+  document.addEventListener('keydown', escapeKey);
 }
 
 function closeModal() {
   modalRef.classList.remove('is-open');
-  modalImgRef.src = '#';
-  modalImgRef.alt = '#';
+  modalImgRef.src = '';
+  modalImgRef.alt = '';
+  document.removeEventListener('keydown', escapeKey);
+}
+
+function escapeKey(e) {
+  if (e.keyCode === 27) closeModal();
 }
 
 galleryRef.addEventListener('click', openModal);
 
 modalBtnRef.addEventListener('click', closeModal);
 modalOverlayRef.addEventListener('click', closeModal);
-document.addEventListener('keydown', e => {
-  if (e.keyCode === 27) closeModal();
-});
-
-// document.addEventListener('keydown', e => {
-//   console.log(e.keyCode);
-// });
-//console.log();
-// left 37
-// right 39
