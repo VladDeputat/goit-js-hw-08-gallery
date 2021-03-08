@@ -56,12 +56,12 @@ function closeModal() {
 galleryRef.addEventListener('click', openModal);
 
 function pressKey(e) {
-  if (e.keyCode === 27) closeModal();
-  if (e.keyCode === 37) {
+  if (e.key === 'Escape') return closeModal();
+  if (e.key === 'ArrowLeft') {
     if (currentIndex === 0) return;
     currentIndex -= 1;
   }
-  if (e.keyCode === 39) {
+  if (e.key === 'ArrowRight') {
     if (currentIndex === images.length - 1) return;
     currentIndex += 1;
   }
